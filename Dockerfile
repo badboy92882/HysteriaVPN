@@ -9,8 +9,8 @@ RUN wget https://pkgs.tailscale.com/stable/$(wget -q -O- https://pkgs.tailscale.
     tar xzf tailscale* --strip-components=1
 RUN mkdir -p /var/run/tailscale /var/cache/tailscale /var/lib/tailscale
 
-#ENV PORT 1229
-#EXPOSE 1229
+ENV PORT 1229
+EXPOSE 1229
 
 COPY . .
 CMD /app/app/start.sh
